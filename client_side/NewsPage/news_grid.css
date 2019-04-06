@@ -1,0 +1,33 @@
+.menu_profil {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . L L"      
+}
+.identification{
+	grid-area: L;
+	justify-self: end;
+	padding-right: 20px
+}
+.footer {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "F C N FL"        
+}
+.footer_menu{
+	grid-area: F
+}
+.copyright{
+	grid-area: C
+}
+.NewsLetter{
+	grid-area: N
+}
+.Follow{
+	grid-area: FL
+}

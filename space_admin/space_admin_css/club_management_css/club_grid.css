@@ -1,0 +1,80 @@
+.container{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 1fr auto;
+    }
+.return{
+	grid-column: 1/2;
+	grid-row: 1/2;
+	justify-self: start;
+	align-self: start;
+} 
+.Addleague{
+	grid-column: 3/-1;
+	grid-row: 1/2;
+	justify-self: end;
+	align-self: start;
+}
+
+.info_team{
+	grid-column: 2/3;
+	grid-row: 2/-1;
+	display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(8 , 1fr);
+    grid-template-areas: 
+    ". L "
+    ". T"
+    ". F"
+    ". R"
+    ". V"
+    ". AVG"
+    ". C"
+    "CH S"
+	}
+.all_League{
+	grid-area: L;
+	justify-self: stretch;
+	align-self: start;
+}	
+.team{
+	grid-area: T;
+	align-self: start
+}
+.cup{
+	grid-area: C;
+	align-self: start
+}
+.rank{
+	grid-area: R;
+	justify-self: stretch;
+	align-self: start;
+
+}
+.valeur{
+	grid-area: V;
+	justify-self: stretch;
+	align-self: start;
+
+}
+.spectator{
+	grid-area: AVG;
+	justify-self: stretch;
+	align-self: start
+}
+.founded{
+	grid-area: F;
+	align-self: start
+}
+.file_input{
+	grid-area: CH;
+	justify-self: start;
+}
+.save{
+	grid-area: S;
+	justify-self: end;
+}
+
+ 
+

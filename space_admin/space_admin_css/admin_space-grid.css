@@ -1,0 +1,29 @@
+.container {  
+    display: grid;
+    grid-gap: : 3px;
+    grid-template-columns: repeat(4, 1fr);
+    /*grid-template-rows: 1fr 4fr;*/
+    grid-template-areas: 
+    		"h h h h"
+    		"a s c v";
+  }  
+.header{
+	grid-area: h;
+   }
+.slide_bt{
+	grid-area: s;
+	justify-self: center;
+}
+.article_bt{
+	grid-area: a;
+	justify-self: center;
+}
+.score_bt{
+	grid-area: c;
+	justify-self: center;
+}
+.video_bt{
+	grid-area: v;
+	justify-self: center;
+}
+

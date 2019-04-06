@@ -1,0 +1,86 @@
+.menu_profil {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . L L"      
+}
+.identification{
+	grid-area: L;
+	justify-self: end;
+	padding-right: 20px
+}
+.league{
+	background-color: #EBEBEB; 
+	margin : 5% 15%;
+	padding: 2% 5%;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: 1fr 1fr 1fr 0.5fr;
+	grid-template-rows: 2fr 1fr 1fr ;
+	grid-template-areas:
+	"imgL LG avg  imgC"
+	"imgL T  RVN  C"
+	"imgL R  RN   ." ;
+}
+
+.img_league{
+	grid-area: imgL;
+	max-height: 300px;
+    max-width: 230px;
+    justify-self: stretch;
+    align-self: stretch;
+
+}
+.img_country{
+	grid-area: imgC
+	max-height: 200px;
+    max-width: 180px;
+}
+#country{
+	grid-area: C;
+	justify-self : center;
+	align-self: start;
+}
+#Teams{
+	grid-area: T
+}
+#Rank{
+	grid-area: R
+}
+#average{
+	grid-area: avg;
+	align-self: center;
+}
+.league h2 {
+	grid-area: LG
+}
+.Rnews {
+	grid-area: RN;
+	align-self : center;
+}
+.league a:last-child {
+	grid-area: RVN;
+	align-self: center;
+}
+.footer {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "F C N FL"        
+}
+.footer_menu{
+	grid-area: F
+}
+.copyright{
+	grid-area: C
+}
+.NewsLetter{
+	grid-area: N
+}
+.Follow{
+	grid-area: FL
+}

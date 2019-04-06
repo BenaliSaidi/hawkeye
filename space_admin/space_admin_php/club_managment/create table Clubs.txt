@@ -1,0 +1,9 @@
+CREATE TABLE clubs (
+   ID int NOT NULL AUTO_INCREMENT,
+   idleague varchar(255), 
+   team varchar(255) NOT NULL,
+   rank int,
+   valeur int,
+   avgspec int,
+   PRIMARY KEY (ID)    
+);

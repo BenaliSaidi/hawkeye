@@ -1,0 +1,77 @@
+body{
+	background:#CDCDCD;
+}
+.info_league ,.info_team ,.info_player{
+	margin-top:10%; 
+	padding: 40px 20px 20px 20px  ;
+	/* padding: 10px; */
+	background-color: #a7a7a7;
+	border: 1px solid  #a7a7a7 ;
+	border-radius: 5px
+}
+
+.style{
+	font-size: 20px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+.deco{
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: bold
+}
+
+.btn_save {
+  background-color: #6C7484; 
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 12px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.btn_save:hover {
+  background-color: #2e6b31;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+  background-color: #6C7484; 
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 12px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#hover_btn:hover {
+    background-color: #2e6b31;
+}
+.back ,.CLUB ,.LEAGUE {
+    background-color: #6C7484;
+    font-size: 20px;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+

@@ -1,0 +1,11 @@
+CREATE TABLE athletes (
+    id int AUTO_INCREMENT,
+	name varchar (255),
+    country varchar(255),
+	age int ,
+    weight int,
+    tall int, 
+    idleague varchar(255),
+    team varchar(255),
+    poste varchar(255)
+);

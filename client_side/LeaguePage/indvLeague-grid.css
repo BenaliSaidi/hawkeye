@@ -1,0 +1,76 @@
+.menu_profil {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . L L"      
+}
+.identification{
+	grid-area: L;
+	justify-self: end;
+	padding-right: 20px
+}
+
+.club{
+	background-color: #EBEBEB; 
+	margin : 5% 15%;
+	padding: 2% 5%;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 2fr 1fr 1fr ;
+	grid-template-areas:
+	"imgC T .   . "
+	"imgC R C   Rn "
+	"imgC F avg TV " ;
+}
+.img_club{
+	grid-area: imgC;
+	align-self: center;
+}
+#team{
+	grid-area: T;
+	font-size: 40px
+}
+#rank{
+	grid-area: R
+}
+#founded{
+	grid-area: F
+}
+#cup{
+	grid-area: C
+}
+#average{
+	grid-area: avg
+}
+#Rnews{
+	grid-area: Rn
+}
+.club a:last-child{
+	grid-area: TV 
+}
+
+
+
+.footer {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "F C N FL"        
+}
+.footer_menu{
+	grid-area: F
+}
+.copyright{
+	grid-area: C
+}
+.NewsLetter{
+	grid-area: N
+}
+.Follow{
+	grid-area: FL
+}

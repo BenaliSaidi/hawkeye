@@ -1,0 +1,61 @@
+.menu_profil {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . L L"      
+}
+.identification{
+	grid-area: L;
+	justify-self: end;
+	padding-right: 20px
+}
+
+.videos{
+	display: grid;
+	grid-template-columns: repeat( 2 , 1fr);
+	grid-template-rows: 2fr auto;
+}
+.playVideo{
+	padding: 5% 20%;
+	display: grid;
+	grid-column: 1/-1;
+	grid-row : 1/2;	
+	justify-items: stretch;
+	align-items: stretch;
+}
+
+.videoList{
+	padding: 0% 5%;
+	grid-column : 1/-1;
+	grid-row : 2/-1;
+	display: grid;
+	grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+}
+.miniature{
+	max-width: 300px ;
+	max-height: 300px ;
+}
+.footer {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "F C N FL"        
+}
+.footer_menu{
+	grid-area: F
+}
+.copyright{
+	grid-area: C
+}
+.NewsLetter{
+	grid-area: N
+}
+.Follow{
+	grid-area: FL
+}

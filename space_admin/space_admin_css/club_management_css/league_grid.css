@@ -1,0 +1,70 @@
+.container{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 1fr auto;
+    }
+.return{
+	grid-column: 1/2;
+	grid-row: 1/2;
+	justify-self: start;
+	align-self: start;
+} 
+.Addclub{
+	grid-column: 3/-1;
+	grid-row: 1/2;
+	justify-self: end;
+	align-self: start;
+}
+
+.info_league{
+	grid-column: 2/3;
+	grid-row: 2/-1;
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    ". C"
+    ". L"
+    ". T"
+    ". R "
+    ". SP"
+    "CH S"
+	}
+.soccer_league{
+
+	grid-area: L;
+	justify-self: stretch;
+	align-self: start;
+
+}	
+.all_country{
+	grid-area: C;
+	justify-self: stretch;
+	align-self: start;
+
+}
+.team{
+	grid-area: T;
+	align-self: start
+}
+.rank{
+	grid-area: R;
+	align-self: start
+}
+.spectator{
+	grid-area: SP;
+	justify-self: stretch;
+	align-self: start
+}
+.file_input{
+	grid-area: CH;
+	justify-self: start;
+}
+.save{
+	grid-area: S;
+	justify-self: end;
+}
+
+ 
+

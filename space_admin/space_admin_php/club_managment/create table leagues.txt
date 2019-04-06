@@ -1,0 +1,9 @@
+CREATE TABLE leagues (
+   ID int NOT NULL AUTO_INCREMENT,
+   country varchar(255) NOT NULL,
+   idleague varchar(255), 
+   team int,
+   avgspec int,
+   PRIMARY KEY (ID)    
+);
+

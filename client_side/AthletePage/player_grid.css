@@ -1,0 +1,90 @@
+.menu_profil {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . L L";
+       
+}
+.identification{
+	grid-area: L;
+	justify-self: end;
+	padding-right: 20px
+}
+
+.player{
+    
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns:  2fr 1.5fr 1fr 1fr 1.5fr ;
+    grid-template-rows: repeat(4 , 1fr );
+    grid-template-areas: 
+    " IMG_P N   N  N   IMG_T "
+    " IMG_P N   N  N   IMG_T "
+    " IMG_P A   T  W   IMG_T "
+    " IMG_P Na  L  P   TEAM ";
+}
+
+#player{
+    grid-area: IMG_P;
+    justify-self: stretch;
+    align-self: stretch;
+    max-height: 300px;
+    max-width: 230px;
+}
+#team{
+    grid-area: IMG_T;
+    justify-self: center;
+    align-self: stretch;
+    max-height: 200px;
+    max-width: 180px;
+}
+.name{
+    grid-area: N;
+    align-self: center;
+
+}
+.nationality{
+    grid-area: Na 
+}
+.age{
+    grid-area: A
+}
+.weight{
+    grid-area: W
+}
+.tall{
+    grid-area: T
+}
+.league{
+    grid-area: L
+}
+.team{
+    grid-area: TEAM;
+    justify-self: center;
+    align-self: center;  
+}
+.poste{
+    grid-area: P
+}
+.footer {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "F C N FL"        
+}
+.footer_menu{
+	grid-area: F
+}
+.copyright{
+	grid-area: C
+}
+.NewsLetter{
+	grid-area: N
+}
+.Follow{
+	grid-area: FL
+}

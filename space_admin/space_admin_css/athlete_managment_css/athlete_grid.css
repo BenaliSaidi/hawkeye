@@ -1,0 +1,89 @@
+.container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 1fr auto;
+    }
+.return{
+	grid-column: 1/2;
+	grid-row: 1/2;
+	justify-self: start;
+	align-self: start;
+} 
+.info_player{
+	grid-column: 2/3;
+	grid-row: 2/-1;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(9 , 1fr);
+    grid-template-areas: 
+    ". N N N "
+    ". C C C "
+    ". A A A "
+    ". W LBT Ta "
+    ". L L L "
+    ". T T T "
+    ". P P P "
+    "CH . . S ";
+	}
+
+.name{
+	grid-area: N;
+	justify-self: stretch;
+	align-self: start;
+
+}	
+.country{
+	grid-area: C;
+	align-self: start;
+	justify-self: stretch;
+}
+.age{
+	grid-area: A;
+	justify-self: stretch;
+	align-self: start;
+
+}
+.weight{
+	grid-area: W;
+	justify-self: stretch;
+	align-self: start;
+
+}
+.lbtall{
+	grid-area: LBT;
+	justify-self: center;
+	align-self: start;
+}
+.tall{
+	grid-area: Ta;
+	justify-self: stretch;
+	align-self: start
+}
+
+.league{
+	grid-area: L;
+	justify-self: stretch;
+	align-self: start
+}
+.team{
+	grid-area: T;
+	justify-self: stretch;
+	align-self: start
+}
+.poste{
+	grid-area: P;
+	justify-self: stretch;
+	align-self: start
+}
+.file_input{
+	grid-area: CH;
+	justify-self: start;
+}
+.save{
+	grid-area: S;
+	justify-self: end;
+}
+
+ 
+

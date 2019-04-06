@@ -1,0 +1,60 @@
+.container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    justify-items: center;
+    grid-template-areas: 
+     "r"
+     "Vi"
+     "Vl"
+   }
+.return{	
+	grid-area: r;
+	align-self: start;
+	justify-self: start;
+}
+.VideoInfo{
+	width: 50%;
+	grid-area: Vi;
+	align-self: start;
+	justify-self: center;
+	display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 2fr 1fr   ;
+    grid-template-areas: 
+    "T T"
+    "D D"
+    "F S" 
+      
+}
+
+.VideoTitel{
+	grid-area: T;
+	max-height: 50px
+}
+.VideoDescr{
+	grid-area: D;
+	max-height: 250px
+}
+.file_input{
+	grid-area: F;
+	justify-self: start
+}
+.save_video{
+	grid-area: S;
+	justify-self: end;
+}
+.VideoShow{
+	grid-area: vi;
+	justify-self: center;
+} 
+
+.vidlist{
+	grid-area: Vl;
+	justify-self: center;
+	overflow: hidden;
+	max-width: 400px;
+	word-wrap: break-word;
+}
