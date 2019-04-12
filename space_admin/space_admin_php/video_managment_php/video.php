@@ -4,26 +4,29 @@ include "config.php";
 if(isset($_POST["save"])){
 	$VideoTitel=$_POST['VideoTitel'];
 	$VideoDescr=$_POST['VideoDescr'];
-	$insertion = "INSERT INTO videos (title , description , vidName , datePUB) 
-	VALUES (:VideoTitel , :VideoDescr , :vidName , Now() )" ;
+	$randomName = rand(5, 10000000000000);
+	$imgName = $randomName.".png";
+	$vidName = $randomName.".mp4";
+
+	$insertion = "INSERT INTO videos (title , description , imgName , vidName , datePUB) 
+	VALUES (:VideoTitel , :VideoDescr , :imgName , :vidName , Now() )" ;
 
 	$stmt = $connexion->prepare($insertion);
 	$stmt-> bindParam(':VideoTitel', $VideoTitel );
 	$stmt-> bindParam(':VideoDescr', $VideoDescr );
+	$stmt-> bindParam(':imgName', $imgName );
 	$stmt-> bindParam(':vidName', $vidName );
+
 	$stmt -> execute();
-// move the video to the folder 
-	$last_id = $connexion->lastInsertId();
-	$vidName = $last_id .'.mp4' ;
+// move the video to the folder
 	$chemin = 'videos/'.$vidName;
-	
 	$vid = $_FILES['video']['tmp_name'];
 	move_uploaded_file($vid, $chemin );
 
 // generate a thumbnail for the slide video using ffmpeg
 	$ffmpeg = '\ffmpeg\bin\ffmpeg';   
 	$video = $chemin;   
-	$image = '..\..\..\HomePage\video_thumbnail/'.$last_id.'.jpg';    
+	$image = '..\..\..\client_side\HomePage\video_thumbnail/'.$imgName; 
 	$interval = 2;    
 	$size = '640x480';    
 	$cmd = "$ffmpeg -i $video -deinterlace -an -ss $interval -f mjpeg -t 1 -r 1 -y -s $size $image 2>&1";
@@ -52,8 +55,7 @@ $select= $connexion->query('SELECT * FROM videos ORDER BY ID DESC ') ;
 				<div class="file_input">
 					<input  class="inputfile" type="file" name="video" id="file"  />		
 					<label id="hover_btn" for="file">Choose a video</label>
-					<!-- <input  class="inputfile" type="file" name="image" id="file"  />		
-					<label id="hover_btn" for="file">Choose a thumbnail</label>	 -->			
+							
 				</div>
 				<div class= save_video>
 			        <input class="btn_save" type="submit" name="save" value= "save" id="disp_button">        
@@ -65,13 +67,13 @@ $select= $connexion->query('SELECT * FROM videos ORDER BY ID DESC ') ;
 								  // add each row returned into an array
 									  $tit = $row['title'];
 									  $descr = $row['description'];
-									  $idVid = $row["ID"].".mp4";
+									  $vidName = $row["vidName"];
 									  ?>
 			<div class="vidlist">						  
-				<h1  ><?php echo $tit ?> </h1>
+				<h1  ><?php echo $tit   ?></h1>
 				<div class="VideoShow">
 				<video  width="400px" height="200px" controls="">
-					<source src=videos/<?php echo $idVid  ?> type="video/mp4"></video>
+					<source src="videos/<?php echo $vidName ?>" type="video/mp4"></video>
 				</div>
 				<div class="videscr">
 				<p ><?php echo $descr ?></p>

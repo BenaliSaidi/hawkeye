@@ -1,3 +1,10 @@
+<?php 
+
+include "../HomePage/config_db.php" ;
+
+$select= $connexion->query('SELECT * FROM videos ORDER BY ID DESC ') ;
+         ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,17 +18,23 @@
        
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+        <script type="text/javascript">
+        $(document).ready(function() {
+          $(".slider_video").click(function(){
+            var vid = $(this).find("img").attr("alt");
+            var tit = $(this).find("h2");
 
-  <script>
-    $(document).ready(function(){
-      $("img").click(function(){
-        var vid = $(this).attr("alt");
-        // alert(vid);
-        $("source").attr("src" , vid );
-        // $("#div1").load(vid);
-      });
-    });
-</script>
+            $("#title").replaceWith(tit);
+            $("#vid").get(0).pause();
+            $("#loadVideo").attr('src', vid);
+            $("#vid").get(0).load();
+
+            
+          });
+          
+        });
+        </script>
+
 	</head>
 <body>
     <div class="container" >
@@ -43,122 +56,26 @@
         <div class="videos">
 
             <div class="playVideo">
-                <h2>testttt</h2>
-                <video height="500vm" controls="">
-                  <source src="1.mp4" type="video/mp4">
+                <h2 id="title"></h2>
+                <video id="vid" height="500vm" controls="">
+                  <source id="loadVideo" src='' type="video/mp4">
                 </video>
+                <p></p>
             </div>
                                            
         <div class="videoList">
- 
-        <div class="slider_video">
-            <h2>11111111</h2>
-            <a href="#">
-            <img class="miniature" src="1.png" alt="1.mp4"></a>
-        </div>
+        <?php while ($row = $select->fetch()) {
+            $title = $row['title'];
+            $imgName = $row['imgName'];
+            $vidName = $row['vidName'];
+            $pathToVid = '../../space_admin\space_admin_php\video_managment_php\videos/'.$vidName ?>
 
-     
-        <div class="slider_video">
-            <h2>2222222</h2>
-            <a href="#">
-            <img class="miniature" src="2.png"  alt="2.mp4"></a>
-        </div>
-
-          <div class="slider_video">
-            <h2>3333333</h2>
-            <a href="#">
-            <img class="miniature" src="1.png" alt="3.mp4" ></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <h2>44444444</h2>
-            <a href="#">
-            <img class="miniature" src="2.png" alt="4.mp4"></a>
-        </div>
-
-          <div class="slider_video">
-            <h2>5555555</h2>
-            <a href="#">
-            <img class="miniature" src="1.png" alt="5.mp4"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <h2>66666666</h2>
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-          <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="1.png"></a>
-        </div>
-
-     
-        <div class="slider_video">
-            <a href="#">
-            <img class="miniature" src="2.png"></a>
-        </div>
-
-
-
-        
+            <div class="slider_video">
+                <h2 id="tit"> <?php echo $title  ?> </h2>
+                <img class="miniature" src="../HomePage\video_thumbnail/<?php echo $imgName ?>" alt=<?php echo $pathToVid  ?> >
+            </div> 
+     <?php   }  ?>
+       
         </div>
         </div>
     </div>
